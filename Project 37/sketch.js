@@ -36,7 +36,8 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 200);
+  createCanvas(displayWidth - 20,displayHeight - 30);
+  database = firebase.database();
   
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
@@ -65,6 +66,9 @@ function setup() {
   obstaclesGroup = new Group();
   
   score = 0;
+
+  camera.position.x = displaywidth/2;
+  camera.position.y = trex[index - 1].y
 }
 
 
